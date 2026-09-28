@@ -1,0 +1,182 @@
+# Skin Lesion Classification using EfficientNet and DWT
+
+An AI-based skin lesion classification project that combines **EfficientNet and Discrete Wavelet Transform (DWT)** to classify dermoscopic skin images.
+
+The project explores how deep learning and image frequency analysis can be combined to support automated skin lesion image classification.
+
+## Project Overview
+
+Skin lesions can have different visual characteristics, making their classification a challenging computer vision task.
+
+This project uses a hybrid deep learning approach that combines:
+
+* **EfficientNet:** A convolutional neural network used for extracting meaningful visual features from skin lesion images.
+* **Discrete Wavelet Transform (DWT):** An image processing technique used to capture frequency and texture information.
+* **Deep Learning Classification:** The extracted features are used to classify dermoscopic images into different skin lesion categories.
+
+The model is trained and evaluated using the HAM10000 dataset.
+
+## Objectives
+
+* Develop a deep learning model for skin lesion image classification.
+* Explore the combination of EfficientNet and DWT.
+* Analyze the effectiveness of combining spatial and frequency-based image features.
+* Evaluate the model using classification performance metrics.
+
+## Model Architecture
+
+The proposed approach combines deep learning with wavelet-based image processing.
+
+1. **Input Image:** A dermoscopic skin lesion image is provided to the pipeline.
+2. **Image Preprocessing:** The image is prepared according to the model's input requirements.
+3. **DWT Feature Extraction:** Wavelet transformation captures additional texture and frequency information.
+4. **EfficientNet Feature Extraction:** EfficientNet extracts high-level visual features from the image.
+5. **Feature Fusion and Classification:** The extracted features are combined and passed to the classification layers.
+6. **Prediction:** The model predicts the skin lesion category.
+
+> Note: The exact feature fusion and classification implementation should match the architecture used in the notebook.
+
+## Dataset
+
+**HAM10000 – Human Against Machine with 10000 Training Images**
+
+The HAM10000 dataset contains dermatoscopic images of pigmented skin lesions and is commonly used for skin lesion classification research.
+
+Dataset source: [HAM10000 Dataset – Harvard Dataverse](https://doi.org/10.7910/DVN/DBW86T)
+
+The dataset includes seven diagnostic categories:
+
+| Label | Lesion Category                                 |
+| ----- | ----------------------------------------------- |
+| akiec | Actinic keratoses and intraepithelial carcinoma |
+| bcc   | Basal cell carcinoma                            |
+| bkl   | Benign keratosis-like lesions                   |
+| df    | Dermatofibroma                                  |
+| mel   | Melanoma                                        |
+| nv    | Melanocytic nevi                                |
+| vasc  | Vascular lesions                                |
+
+The dataset contains 10,015 dermatoscopic images.
+
+## 🛠️ Technologies Used
+
+* Python
+* TensorFlow / Keras
+* EfficientNet
+* Discrete Wavelet Transform (DWT)
+* NumPy
+* Pandas
+* OpenCV
+* Matplotlib
+* Scikit-learn
+* Jupyter Notebook / Google Colab
+
+## 📈 Results
+
+The hybrid EfficientNet + DWT model achieved approximately **89% classification accuracy** in the reported experiment.
+
+The model performance should be interpreted in the context of the dataset split, preprocessing, and evaluation methodology used in the notebook.
+
+Additional evaluation metrics may include:
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* Confusion matrix
+
+## How to Run the Project
+
+### Option 1: Run using Google Colab
+
+1. Open the notebook from this repository.
+2. Upload or mount the HAM10000 dataset.
+3. Update the dataset paths according to your environment.
+4. Run the notebook cells sequentially.
+5. Review the training results and evaluation metrics.
+
+### Option 2: Run locally
+
+#### 1. Clone the repository
+
+```bash
+git clone https://github.com/chHarshi/skin-lesion-classification.git
+cd skin-lesion-classification
+```
+
+#### 2. Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+#### 3. Install the required libraries
+
+Install the packages used in the notebook. A typical environment may require:
+
+```bash
+pip install tensorflow numpy pandas opencv-python matplotlib scikit-learn jupyter
+```
+
+Install any additional packages required by the notebook, including the library used for DWT.
+
+#### 4. Download the dataset
+
+Download the HAM10000 dataset from the source linked above.
+
+Update the dataset paths in the notebook to point to the downloaded images and metadata.
+
+#### 5. Run the notebook
+
+```bash
+jupyter notebook
+```
+
+Open `final-execution (1).ipynb` and execute the cells in order.
+
+## Project Structure
+
+```text
+skin-lesion-classification/
+│
+├── final-execution (1).ipynb
+├── README.md
+└── dataset/
+    ├── images/
+    └── metadata.csv
+```
+
+The dataset folder above represents a suggested local arrangement. The actual dataset files may be stored separately and are not required to be committed to GitHub.
+
+## 🔬 Applications
+
+* Research in automated skin lesion image classification
+* Medical image analysis
+* Computer vision and deep learning experimentation
+* Exploring hybrid feature extraction techniques
+
+## Limitations and Disclaimer
+
+This project is intended for educational and research purposes only.
+
+It is not a medical diagnostic system and must not be used to diagnose skin conditions or make treatment decisions. Predictions from the model require appropriate clinical validation before any real-world medical use.
+
+Model performance may vary depending on image quality, dataset distribution, and the evaluation methodology.
+
+## Author
+
+**Harshitha**
+
+Computer Science and Engineering – Artificial Intelligence and Machine Learning
+
+GitHub: [chHarshi](https://github.com/chHarshi)
+
+## License
+
+A license has not yet been specified. Add an appropriate open-source license if you intend to permit others to reuse or distribute this project.
