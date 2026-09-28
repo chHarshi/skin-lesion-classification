@@ -58,7 +58,7 @@ The dataset includes seven diagnostic categories:
 
 The dataset contains 10,015 dermatoscopic images.
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 * Python
 * TensorFlow / Keras
@@ -69,9 +69,9 @@ The dataset contains 10,015 dermatoscopic images.
 * OpenCV
 * Matplotlib
 * Scikit-learn
-* Jupyter Notebook / Google Colab
+* Kaggle Notebooks / Jupyter Notebook
 
-## 📈 Results
+## Results
 
 The hybrid EfficientNet + DWT model achieved approximately **89% classification accuracy** in the reported experiment.
 
@@ -87,74 +87,44 @@ Additional evaluation metrics may include:
 
 ## How to Run the Project
 
-### Option 1: Run using Google Colab
+This project was developed and executed using Kaggle Notebooks.
 
-1. Open the notebook from this repository.
-2. Upload or mount the HAM10000 dataset.
-3. Update the dataset paths according to your environment.
-4. Run the notebook cells sequentially.
-5. Review the training results and evaluation metrics.
+### Run on Kaggle
 
-### Option 2: Run locally
+1. Download or open the `.ipynb` notebook from this repository.
+2. Sign in to [Kaggle](https://www.kaggle.com/).
+3. Create a new Kaggle Notebook.
+4. Upload the notebook file `final-execution (1).ipynb`.
+5. Add the HAM10000 dataset to the notebook using Kaggle's Add Input option.
+6. Update the dataset paths if required.
+7. Enable GPU acceleration in the notebook settings if needed.
+8. Run the notebook cells sequentially to reproduce the experiment.
 
-#### 1. Clone the repository
+### Run Locally
+
+The notebook can also be executed locally using Jupyter Notebook or JupyterLab.
+
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/chHarshi/skin-lesion-classification.git
 cd skin-lesion-classification
 ```
 
-#### 2. Create a virtual environment
-
-```bash
-python -m venv .venv
-```
-
-Activate it on Windows:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-#### 3. Install the required libraries
-
-Install the packages used in the notebook. A typical environment may require:
-
-```bash
-pip install tensorflow numpy pandas opencv-python matplotlib scikit-learn jupyter
-```
-
-Install any additional packages required by the notebook, including the library used for DWT.
-
-#### 4. Download the dataset
-
-Download the HAM10000 dataset from the source linked above.
-
-Update the dataset paths in the notebook to point to the downloaded images and metadata.
-
-#### 5. Run the notebook
+2. Install the dependencies required by the notebook.
+3. Download the HAM10000 dataset and configure the dataset paths.
+4. Open the notebook:
 
 ```bash
 jupyter notebook
 ```
 
-Open `final-execution (1).ipynb` and execute the cells in order.
+5. Run the notebook cells sequentially.
 
-## Project Structure
+**Note:** The notebook was originally developed in Kaggle. Dataset paths, package versions, and hardware settings may need to be adjusted when running it locally.
 
-```text
-skin-lesion-classification/
-│
-├── final-execution (1).ipynb
-├── README.md
-└── dataset/
-    ├── images/
-    └── metadata.csv
-```
 
-The dataset folder above represents a suggested local arrangement. The actual dataset files may be stored separately and are not required to be committed to GitHub.
-
-## 🔬 Applications
+## Applications
 
 * Research in automated skin lesion image classification
 * Medical image analysis
