@@ -1,21 +1,26 @@
 # Skin Lesion Classification using EfficientNetB3 and DWT
 
 An AI-based skin lesion image classification project that uses **EfficientNetB3 and Discrete Wavelet Transform (DWT)** to classify dermoscopic images as **benign or malignant**.
+
 The project explores wavelet-based image preprocessing combined with transfer learning for binary skin lesion classification.
 
 ## Kaggle Notebook
 
 This project was developed and executed using Kaggle Notebooks.
+
 **View the complete implementation:** [Open Kaggle Notebook](https://www.kaggle.com/code/miniproject36/final-execution)
 
 ## Project Overview
 
 Skin lesions have different visual characteristics, making their classification a challenging computer vision task.
+
 This project implements a deep learning pipeline consisting of:
+
 * **Image preprocessing:** Images are resized and Gaussian filtering is applied during data generation.
 * **Discrete Wavelet Transform (DWT):** Haar wavelet transformation is applied to grayscale images, and the LL approximation coefficients are used.
 * **EfficientNetB3:** An ImageNet-pretrained convolutional neural network processes the transformed images.
 * **Binary classification:** A sigmoid output layer predicts whether an image belongs to the benign or malignant class.
+
 The model is trained and evaluated using the HAM10000 dataset.
 
 ## Objectives
@@ -29,6 +34,7 @@ The model is trained and evaluated using the HAM10000 dataset.
 ## Model Architecture
 
 The notebook implements the following pipeline:
+
 1. **Input Image:** A dermoscopic skin lesion image is loaded from the HAM10000 dataset.
 2. **Image Preprocessing:** The image is resized to 224 × 224 pixels. Gaussian blur is applied during data generation.
 3. **Grayscale Conversion:** The RGB image is converted to grayscale.
@@ -36,14 +42,19 @@ The notebook implements the following pipeline:
 5. **EfficientNetB3:** The transformed image is passed to an ImageNet-pretrained EfficientNetB3 model.
 6. **Classification Layer:** Global average pooling and a sigmoid dense layer produce a binary prediction.
 7. **Fine-Tuning:** The model is fine-tuned by unfreezing the last 30 layers of the EfficientNetB3 base model.
+
 The model uses the Adam optimizer and binary cross-entropy loss.
+
 **Note:** DWT is applied to the input image before EfficientNetB3. The notebook does not use separate DWT and EfficientNet feature branches or a feature-fusion layer.
 
 ## Dataset
 
 **HAM10000 – Human Against Machine with 10000 Training Images**
+
 The HAM10000 dataset contains dermatoscopic images of pigmented skin lesions and is commonly used in skin lesion classification research.
+
 Dataset source: [Skin Cancer MNIST: HAM10000 – Kaggle](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
+
 The dataset contains 10,015 dermatoscopic images across seven diagnostic categories:
 
 | Label | Lesion Category                                 |
@@ -59,11 +70,14 @@ The dataset contains 10,015 dermatoscopic images across seven diagnostic categor
 ### Binary Label Mapping
 
 The notebook groups the original seven categories into two classes:
+
 | Binary Class | Original Labels   |
 | ------------ | ----------------- |
 | Benign       | nv, bkl, df, vasc |
 | Malignant    | mel, bcc, akiec   |
+
 The data is divided into training, validation, and test sets using stratified sampling:
+
 * Training set: 72%
 * Validation set: 18%
 * Test set: 10%
@@ -97,6 +111,7 @@ The data is divided into training, validation, and test sets using stratified sa
 ## Results
 
 The model was evaluated on the HAM10000 dataset for binary classification.
+
 ### Validation Performance
 
 | Metric    | Score  |
@@ -134,21 +149,30 @@ This project was developed and executed using Kaggle Notebooks.
 ### Run Locally
 
 The notebook can also be executed locally using Jupyter Notebook or JupyterLab.
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/chHarshi/skin-lesion-classification.git
    cd skin-lesion-classification
    ```
+
 2. Install the required libraries:
+
    ```bash
    pip install numpy pandas matplotlib opencv-python PyWavelets scikit-learn tensorflow jupyter
    ```
+
 3. Download the HAM10000 dataset and update the dataset paths in the notebook.
+
 4. Start Jupyter:
+
    ```bash
    jupyter notebook
    ```
+
 5. Open the notebook and run the cells sequentially.
+
 **Note:** The notebook was originally developed in Kaggle. Dataset paths, package versions, and hardware settings may need to be adjusted when running it locally.
 
 ## Applications
@@ -161,13 +185,17 @@ The notebook can also be executed locally using Jupyter Notebook or JupyterLab.
 ## Limitations and Disclaimer
 
 This project is intended for educational and research purposes only.
+
 It is not a medical diagnostic system and must not be used to diagnose skin conditions or make treatment decisions. Predictions from the model require appropriate clinical validation before any real-world medical use.
+
 Model performance may vary depending on image quality, dataset distribution, preprocessing, and evaluation methodology.
 
 ## Author
 
 **Harshitha**
+
 Computer Science and Engineering – Artificial Intelligence and Machine Learning
+
 GitHub: [chHarshi](https://github.com/chHarshi)
 
 ## License
