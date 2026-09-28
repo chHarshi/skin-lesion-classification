@@ -52,6 +52,7 @@ The dataset includes seven diagnostic categories:
 | mel   | Melanoma                                        |
 | nv    | Melanocytic nevi                                |
 | vasc  | Vascular lesions                                |
+
 The dataset contains 10,015 dermatoscopic images.
 
 ## Technologies Used
